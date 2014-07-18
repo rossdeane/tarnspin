@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class='container' style="margin-top: 40px;">
+            <div class='row'>
+                <div class="col-sm-12">
+                   <form>
+                       <div class="form-group">
+                            <label for="channel">Channel</label>
+                            <input type="text" class="form-control" id="channel" placeholder="#general">
+                       </div>
+
+                       <div class="form-group">
+                            <label for="secret">Secret</label>
+                            <input type="text" class="form-control" id="secret" placeholder="I hate everyone">
+                       </div>
+
+                       <div class="btn btn-lg btn-primary btn-block" id='tellsecret' style='font-size: 32px;'><i class="fa fa-meh-o"></i> Tell Secret</div>
+                   </form> 
+                </div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+            $('#tellsecret').click(function(){
+                var dept = $('#delete-modal').attr('data-dept');
+                var channel = $('#channel').val();
+                var secret = $('#secret').val();
+                var opts = {"channel": channel, "username": "secrets", "text": secret, "icon_emoji": ":speak_no_evil:"};
+                json = JSON.stringify(opts);
+
+                $.post('https://duedil.slack.com/services/hooks/incoming-webhook?token=iCNhWy2dwL6QsL5zTsRPBHqb',
+                    {"payload": json},
+                function(){    
+                
+                });
+            });
+        });
+        </script>
+    </body>
+</html>
