@@ -1,0 +1,22 @@
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.tarn
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         3.0s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    margin: auto;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes pulse { 0% {background-color: #45CEEF;} 25% {background-color: #FFF5A5;} 50% {background-color: #FFD4DA;} 75% {background-color: #99D2E4;} 100% {background-color: #D8CAB4;} } 
+
+body { background-color: #45CEEF; -webkit-animation: pulse 40s infinite alternate; }
