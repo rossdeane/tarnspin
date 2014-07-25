@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <div class='container' style="margin-top: 150px;">
+        <div class='container' style="margin-top: 100px;">
             <div class='row text-center'>
                 <div class="col-sm-12">
                     <h1>YOU HAVE BEEN TARNSPUN!</h1>
@@ -23,7 +23,7 @@
                    <img class='tarn' src="/tarn.jpg" width='300px'>
                 </div>
                 <div class="col-sm-4">
-                   <img class='tarn' src="/tarn.jpg" width='300px'>
+                   <img class='tarn main' src="/tarn.jpg" width='300px'>
                 </div>
                 <div class="col-sm-4">
                    <img class='tarn' src="/tarn.jpg" width='300px'>
@@ -36,16 +36,18 @@
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160136346&amp;color=00aabb&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        <audio autoplay loop>
+            <source src="/tarnspin.ogg" type="audio/ogg">
+        </audio>
         <script type="text/javascript">
         $(function(){
-            setInterval(function(){
+            $('.tarn.main').bind('webkitAnimationIteration', function(){
                 var tarnCount = $('.tarn-count').text();
                 $('.tarn-count').text(parseInt(tarnCount) + 1);
                 if(tarnCount > 10){
                     $('#official').removeClass('hidden');
                 }
-            }, 3000);
+            });
         });
         </script>
     </body>

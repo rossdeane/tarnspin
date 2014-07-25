@@ -10,11 +10,21 @@
 .tarn
 {
     -webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         3.0s; 
+    -webkit-animation-duration:         2.0s; 
     -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function:  linear;
     margin: auto;
     border-radius: 50%;
+}
+
+.tarn.quick
+{
+    -webkit-animation-duration:         1.0s;
+}
+
+.tarn.slow
+{
+    -webkit-animation-duration:         3.0s;
 }
 
 @-webkit-keyframes pulse { 
